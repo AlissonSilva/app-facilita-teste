@@ -1,10 +1,9 @@
 
 @include('layout._includes.topo')
 
-<div id="content-wrapper" class="d-flex flex-column">
-    <div id="content">
+@include('layout._includes.navbar')
+    <div id="container">
         @yield('conteudo')
     </div>
-</div>
 @include('layout._includes.rodape')
 
