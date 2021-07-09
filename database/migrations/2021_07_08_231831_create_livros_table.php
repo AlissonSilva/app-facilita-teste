@@ -20,7 +20,7 @@ class CreateLivrosTable extends Migration
             $table->integer('edicao');
             $table->integer('ano_publicacao');
             $table->string('editora', 255);
-            $table->integer('num_paginas');
+            $table->integer('num_paginas')->default(0);
             $table->timestamps();
         });
     }

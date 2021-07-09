@@ -13,6 +13,6 @@ class LocacaoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }
