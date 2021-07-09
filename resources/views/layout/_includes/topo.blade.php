@@ -6,6 +6,20 @@
 
         <title>@yield('titulo')</title>
 
+        <style>
+            /*Para dispositivos com width menor que 768px*/
+            body {
+                padding-top: 290px;
+            }
+
+            /*Para dispositivos com width maior ou igual a 768px*/
+            @media (min-width: 768px) {
+                body {
+                    padding-top: 100px;
+                }
+            }
+        </style>
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 

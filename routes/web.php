@@ -20,6 +20,5 @@ Route::get('/', function () {
 
 Route::prefix('/appfacilita/problemas/')->group(function () {
     Route::get('one', ['as' => 'problemas.one', 'uses' => 'App\Http\Controllers\problemas\ProblemaOneController@index']);
+    Route::get('two', ['as' => 'problemas.two', 'uses' => 'App\Http\Controllers\problemas\ProblemaTwoController@index']);
 });
-
-
