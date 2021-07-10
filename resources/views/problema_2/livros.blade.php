@@ -1,6 +1,6 @@
 @extends('layout.site')
 
-@section('titulo','AppFacilita: Prob-02 Usuários')
+@section('titulo','AppFacilita: Prob-02 Livros')
 
 @section('conteudo')
     {{-- <div class="row">
@@ -73,14 +73,14 @@
     </div><br> --}}
     <div class="row form-group">
         <div class="col-sm-6">
-            <label for="" class="label">pesquisar: </label>
-            <input type="text" name="pesquisar" class="form-control form-control-user" id="pesquisar_livros"  required>
+            <label for="" class="label">Pesquisar: </label>
+            <input type="text" name="pesquisar" class="form-control form-control-user" id="pesquisar_problema_two"  required>
         </div>
     </div>
     <div class="row flex-xl-nowrap">
 
         <div class="col-md-12">
-            <table id="tabela_livros" class="table table-striped table-bordered"   >
+            <table id="tabela_problema_two" class="table table-striped table-bordered"   >
                 <thead>
                     <tr>
                         <th>

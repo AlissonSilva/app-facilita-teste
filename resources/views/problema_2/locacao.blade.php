@@ -1,18 +1,18 @@
 @extends('layout.site')
 
-@section('titulo','AppFacilita: Problema 02 Usuários')
+@section('titulo','AppFacilita: Problema 02')
 
 @section('conteudo')
     <div class="row form-group">
         <div class="col-sm-6">
             <label for="" class="label">Pesquisar: </label>
-            <input type="text" name="pesquisar" class="form-control form-control-user" id="pesquisar_problema_two"  required>
+            <input type="text" name="pesquisar" class="form-control form-control-user" id="pesquisar_livros"  required>
         </div>
     </div>
     <div class="row flex-xl-nowrap">
 
         <div class="col-md-12">
-            <table id="tabela_problema_two" class="table table-striped table-bordered"   >
+            <table id="tabela_livros" class="table table-striped table-bordered"   >
                 <thead>
                     <tr>
                         <th>
@@ -69,7 +69,7 @@
                             {{$item->tipo}}
                         </td>
                         <td>
-                            <a href="{{route('problemas.two.locacao.reserva',$item->id_usuario)}}"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                            <i class="bi bi-arrow-right-circle-fill"><a href="#"></a></i>
                         </td>
                     </tr>
                 @endforeach

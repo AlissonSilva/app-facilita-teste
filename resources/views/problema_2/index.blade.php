@@ -27,13 +27,13 @@
             <div class="card mb-4" style="max-width: 540px;">
                 <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <img src="{!! asset('assets/images/pessoas.jpg') !!}" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                     <h5 class="card-title">Usuários</h5>
-                    <p class="card-text"><a class="btn btn-warning btn-sm" href="{{route('problemas.two.usuarios')}}"></a></p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text"><a class="btn btn-warning btn-sm" href="{{route('problemas.two.usuarios')}}">LISTAR USUÁRIOS</a></p>
+                    <p class="card-text">Consulta de usuários cadastro no sistema.</p>
                     </div>
                 </div>
                 </div>
