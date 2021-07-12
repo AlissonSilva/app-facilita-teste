@@ -1,5 +1,5 @@
 @extends('layout.site')
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <script type="text/javascript">
     var token = '{{ csrf_token() }}';
 </script>
@@ -31,10 +31,8 @@
                   Reserva de Livros
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Realiza a reserva de livros</h5>
-                  {{-- <form action="#"  method="POST" enctype="multipart/form-data"> --}}
-                    
-                <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+                    <h5 class="card-title">Realiza a reserva de livros</h5>                    
+                    <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                     
                     <div class="row form-group">
                         <div class="col-sm-4">
@@ -71,7 +69,7 @@
                     </div>
                     <button id="inserirLivro" class="btn btn-sm btn-primary">Inserir</button>
                     <a href="{{route('problemas.two.usuarios')}}" class="btn btn-sm btn-dark">Voltar</a>
-                  {{-- </form> --}}
+                  
                   @if ($message = Session::get('error'))
                     <br><div class="row form-group col-sm-9">
                         <div class="alert alert-info alert-danger">
@@ -91,7 +89,7 @@
             </div><br>
 
             @if(sizeof($locacao)>0)
-                <table class="table table-striped table-bordered" >
+                <table class="table table-striped table-bordered" style="font-size: 11px">
                     <thead>
                         <tr>
                             <th>
@@ -112,6 +110,9 @@
                             <th>
                                 Status Locação
                             </th>
+                            <th>
+                                Baixar
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -119,10 +120,11 @@
                             <tr>
                                 <td>{{$item->titulo}} ({{$item->autor}}, {{$item->ano_publicacao}})</td>
                                 <td>{{gmdate('d/m/Y', strtotime('+0 days',strtotime($item->data_hora_locacao)))}}</td>
-                                <td>{{gmdate('d/m/Y', strtotime('+'.($item->tipo == 'aluno'?'3':'10').' days',strtotime($item->data_hora_locacao)))}}</td>
-                                <td>{{gmdate('d/m/Y', strtotime('+0 days',strtotime($item->data_hora_devolucao))) }}</td>
-                                <td> </td>
-                                <td>{{$item->status_locacao}}</td>
+                                <td>{{gmdate('d/m/Y', strtotime('+0 days',strtotime($item->data_limite_devolucao)))}}</td>
+                                <td>{{isset($item->data_hora_devolucao)?gmdate('d/m/Y', strtotime('+0 days',strtotime($item->data_hora_devolucao))):'' }}</td>
+                                <td>{{$item->atraso >= 0 ? 0 :$item->atraso}} </td>
+                                <td>{{strtoupper($item->status_locacao)}}</td>
+                                <td><a href="{{route('problemas.two.locacao.reservar.baixar',$item->id_locacao)}}"><i class="bi bi-arrow-bar-down"></i></a></td>
                             </tr>
                         @endforeach
                     </tbody>

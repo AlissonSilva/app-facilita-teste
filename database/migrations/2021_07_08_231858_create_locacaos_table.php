@@ -18,9 +18,10 @@ class CreateLocacaosTable extends Migration
             $table->increments('id_locacao');
             $table->integer('id_usuario')->unsigned();
             $table->integer('id_livro')->unsigned();
-            $table->enum('status_locacao', ['entregue', 'em aberto', 'atrasado']);
+            $table->enum('status_locacao', ['entregue', 'em aberto'])->default('em aberto');
             $table->dateTime('data_hora_locacao')->default(DB::raw('CURRENT_TIMESTAMP(0)'));
             $table->dateTime('data_hora_devolucao')->nullable();
+            $table->dateTime('data_limite_devolucao')->nullable();
             $table->integer('dias_atraso')->default(0);
             $table->timestamps();
             $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');

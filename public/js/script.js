@@ -1,4 +1,56 @@
 $(document).ready(function () {
+    $(document).on('keypress', 'input.only-number', function(e) {
+        var $this = $(this);
+        var key = (window.event)?event.keyCode:e.which;
+        var dataAcceptDot = $this.data('accept-dot');
+        var dataAcceptComma = $this.data('accept-comma');
+        var acceptDot = (typeof dataAcceptDot !== 'undefined' && (dataAcceptDot == true || dataAcceptDot == 1)?true:false);
+        var acceptComma = (typeof dataAcceptComma !== 'undefined' && (dataAcceptComma == true || dataAcceptComma == 1)?true:false);
+        if((key > 47 && key < 58)|| (key == 46 && acceptDot)|| (key == 44 && acceptComma)) {
+            
+            return true;
+        } else {
+            return (key == 8 || key == 0)?true:false;
+        }
+    });
+
+    function fib (numMax){
+        for(var fibArray = [0,1], i=0,j=1,k=0; k<numMax;i=j,j=x,k++ ){
+            x=i+j;
+            fibArray.push(x);
+        }
+        console.log(fibArray);
+    }
+
+    function encontrar(arrayFind, index) {
+
+        if(arrayFind.findIndex(x => x.nome === index) < 0) {
+            return false;
+          }else {
+            return true;
+          }
+        
+    }
+
+    $('#calcfib').click(function(){
+        var arrayFib = [];
+        var valores = $('#seqfib').val();
+        const obj1 = valores.split(",");
+        // console.log(obj1.length);
+        //fib(21);
+        for(var i = 0; i<=obj1.length;i++){
+            const fibo = fib(obj1[i]);
+            console.log(fibo);
+            if(fibo.indexOf(obj1[i]) != '-1'){
+                arrayFib.push(obj1[i]);
+            }
+        }
+
+        console.log(arrayFib);
+        
+    });
+
+
     $("#pesquisar_problema_two").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $("#tabela_problema_two tbody tr").filter(function () {
@@ -41,20 +93,29 @@ $(document).ready(function () {
      $('#inserirLivro').click(function(){
          var id_livro = $('#id_livro').val();
          var id_usuario = $('#id_usuario').val();
+         var tipo = $('#tipo').val();
 
         //  alert(id_livro+' '+id_usuario);
         $.ajax({
             type: 'post',
-            url: '/two/locacao/reserva/adicionar/',
+            url: '/appfacilita/problemas/two/locacao/reserva/adicionar/',
             header: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
             data: {
-                _token: $('meta[name="csrf-token"]').attr('content'), id_livro:id_livro, id_usuario:id_usuario
+                _token: $('meta[name="csrf-token"]').attr('content'), id_livro:id_livro, id_usuario:id_usuario, tipo:tipo
             }, 
             success: function(e){
-                $('#resultado').html(e);
+                if (e.msg == 'true') {
+                    location.reload();
+                    $('#resultado').html(e.alert);    
+                }else{
+                    $('#resultado').html(e.alert);
+                }
             }
         });
 
      });
+
+
+     
 
 });
