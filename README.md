@@ -7,28 +7,28 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-Realiza o clone do diretorio ou realiza o download o arquivo .zip e extraia em alguma pasta do servidor
+Realiza o clone do diretorio ou download do arquivo .zip e extraia em alguma pasta do servidor
 
-Criar um banco de dados no MySQL Ex.: create database facilita_biblioteca.
+Criar um banco de dados no MySQL Ex.: <b>create database facilita_biblioteca</b>.
 
 Adicione as informações referentes a conexão do banco no arquivo .env. Veja no exemplo abaixo. 
 
 DB_CONNECTION=mysql<br>
 DB_HOST=127.0.0.1<br>
 DB_PORT=3306<br>
-DB_DATABASE=zeppelin<br>
+DB_DATABASE=facilita_biblioteca<br>
 DB_USERNAME=root<br>
 DB_PASSWORD=<br>
 
 Após alteração no arquivo .env salve o arquivo. Executar os comandos abaixo via cmd ou shell na pasta do projeto.
 
-php artisan migrate<br>
-php artisan db:seed --class=UsuarioSeeder<br>
-php artisan db:seed --class=LivroSeeder<br>
+<b>php artisan migrate</b><br>
+<b>php artisan db:seed --class=UsuarioSeeder</b><br>
+php artisan db:seed --class=LivroSeeder</b><br>
 
 Por fim, executar o comando php artisan serve para iniciar a aplicação laravel.
 
-php artisan serve
+<b>php artisan serve</b>
 
 Como pré-requisito ter instalado o PHP7, Composer, Laravel e o MySQL.
 
