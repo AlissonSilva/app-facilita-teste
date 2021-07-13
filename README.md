@@ -13,18 +13,18 @@ Criar um banco de dados no MySQL Ex.: create database facilita_biblioteca.
 
 Adicione as informações referentes a conexão do banco no arquivo .env. Veja no exemplo abaixo. 
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=zeppelin
-DB_USERNAME=root
-DB_PASSWORD=
+DB_CONNECTION=mysql<br>
+DB_HOST=127.0.0.1<br>
+DB_PORT=3306<br>
+DB_DATABASE=zeppelin<br>
+DB_USERNAME=root<br>
+DB_PASSWORD=<br>
 
 Após alteração no arquivo .env salve o arquivo. Executar os comandos abaixo via cmd ou shell na pasta do projeto.
 
-php artisan migrate
-php artisan db:seed --class=UsuarioSeeder
-php artisan db:seed --class=LivroSeeder
+php artisan migrate<br>
+php artisan db:seed --class=UsuarioSeeder<br>
+php artisan db:seed --class=LivroSeeder<br>
 
 Por fim, executar o comando php artisan serve para iniciar a aplicação laravel.
 
