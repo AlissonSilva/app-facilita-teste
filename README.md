@@ -7,6 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Como instalar a aplicação.
+
 Realiza o clone do diretorio ou download do arquivo .zip e extraia em alguma pasta do servidor
 
 Criar um banco de dados no MySQL Ex.: <b>create database facilita_biblioteca</b>.
@@ -24,7 +26,7 @@ Após alteração no arquivo .env salve o arquivo. Executar os comandos abaixo v
 
 <b>php artisan migrate</b><br>
 <b>php artisan db:seed --class=UsuarioSeeder</b><br>
-php artisan db:seed --class=LivroSeeder</b><br>
+<b>php artisan db:seed --class=LivroSeeder</b><br>
 
 Por fim, executar o comando php artisan serve para iniciar a aplicação laravel.
 
