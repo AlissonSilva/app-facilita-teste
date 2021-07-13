@@ -25,6 +25,7 @@ $(document).ready(function () {
 
 
     $('#calcfib').click(function () {
+        $('#resultadofib').html('');
         var arrayFib = [];
         var valores = $('#seqfib').val();
         const obj1 = valores.split(",");
