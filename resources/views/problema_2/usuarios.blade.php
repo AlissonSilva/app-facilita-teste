@@ -10,7 +10,6 @@
         </div>
     </div>
     <div class="row flex-xl-nowrap">
-
         <div class="col-md-12">
             <table id="tabela_problema_two" class="table table-striped table-bordered"   >
                 <thead>
@@ -31,7 +30,7 @@
                             E-mail
                         </th>
                         <th>
-                            Status 
+                            Status
                         </th>
                         <th>
                             Tipo
@@ -42,7 +41,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 @foreach ($registros as $item)
                     <tr>
                         <td>
@@ -80,4 +79,4 @@
     </div>
 @endsection
 @section('titlo-problema','Problema 02')
-@section('rodape','descrição')
+@section('rodape','A biblioteca de uma universidade deseja fazer um algoritmo que leia o nome do livro que será emprestado, o tipo de usuário (professor ou aluno), o algoritmo deve imprimir um recibo mostrando o nome do livro, o tipo de usuário pro extenso e o total de dias de empréstimo. Considerar que o professor tem 10 dias para devolver o livro e o aluno somente 3 dias.')

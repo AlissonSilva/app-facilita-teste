@@ -9,7 +9,7 @@
             <div class="card mb-4" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="{!! asset('assets/images/livros.jpg') !!}" class="img-fluid rounded mx-auto d-block" alt="...">
+                    <img src="{!! asset('assets/images/livros.jpg') !!}" class="img-fluid rounded mx-auto d-block" alt="Listagem de livros cadastrados">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -27,13 +27,14 @@
             <div class="card mb-4" style="max-width: 540px;">
                 <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="{!! asset('assets/images/pessoas.jpg') !!}" class="img-fluid rounded-start" alt="...">
+                    <img src="{!! asset('assets/images/pessoas.jpg') !!}" class="img-fluid rounded-start" alt="Listagem de usuários e realiza novas locações por usuários">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                     <h5 class="card-title">Usuários</h5>
                     <p class="card-text"><a class="btn btn-warning btn-sm" href="{{route('problemas.two.usuarios')}}">LISTAR USUÁRIOS</a></p>
                     <p class="card-text">Consulta de usuários cadastro no sistema.</p>
+                    <p class="card-text">Realiza novas locações por usuário.</p>
                     </div>
                 </div>
                 </div>
@@ -45,13 +46,13 @@
             <div class="card mb-4" style="max-width: 540px;">
                 <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <img src="{!! asset('assets/images/locacoes.jpg') !!}" class="img-fluid rounded-start" alt="Listagem de usuários que possui locações em aberto">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                     <h5 class="card-title">Locações</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text"><a class="btn btn-warning btn-sm" href="{{route('problemas.two.locacao.emaberto')}}">LISTAR LOCAÇÕES</a></p>
+                    <p class="card-text">Listar usuários que possui locações em aberto.</p>
                     </div>
                 </div>
                 </div>

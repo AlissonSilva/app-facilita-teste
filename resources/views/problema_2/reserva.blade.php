@@ -16,13 +16,13 @@
         padding: 5px;
       font-size: 14px;
     }
-    
+
     .acItem .desc{
         padding: 5px;
       font-size: 10px;
       color:#555;
     }
-    
+
     </style>
 <div class="row">
         <div class="col-md-12">
@@ -31,12 +31,12 @@
                   Reserva de Livros
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Realiza a reserva de livros</h5>                    
+                    <h5 class="card-title">Realiza a reserva de livros</h5>
                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
-                    
+
                     <div class="row form-group">
                         <div class="col-sm-4">
-                            
+
                             <label for="" class="label">Matricula: </label>
                             <input type="number" name="matricula" class="form-control form-control-user" id="matricula" value="{{$usuario->matricula}}" disabled  required>
                         </div>
@@ -69,7 +69,7 @@
                     </div>
                     <button id="inserirLivro" class="btn btn-sm btn-primary">Inserir</button>
                     <a href="{{route('problemas.two.usuarios')}}" class="btn btn-sm btn-dark">Voltar</a>
-                  
+
                   @if ($message = Session::get('error'))
                     <br><div class="row form-group col-sm-9">
                         <div class="alert alert-info alert-danger">
@@ -134,7 +134,7 @@
             <div id="resultado"></div>
         </div>
     </div><br>
-    
+
     @endsection
-@section('titlo-problema','Problema 02')
-@section('rodape','descrição')
+@section('titlo-problema','Problema 02 Reservas')
+@section('rodape','A biblioteca de uma universidade deseja fazer um algoritmo que leia o nome do livro que será emprestado, o tipo de usuário (professor ou aluno), o algoritmo deve imprimir um recibo mostrando o nome do livro, o tipo de usuário pro extenso e o total de dias de empréstimo. Considerar que o professor tem 10 dias para devolver o livro e o aluno somente 3 dias.')

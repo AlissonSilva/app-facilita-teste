@@ -34,7 +34,7 @@ Route::prefix('/appfacilita/problemas/')->group(function () {
     //Locação
     Route::get('two/locacao/', ['as' => 'problemas.two.locacao', 'uses' => 'App\Http\Controllers\problemas\LocacaoController@index']);
     Route::get('two/locacao/reserva/{id}', ['as' => 'problemas.two.locacao.reserva', 'uses' => 'App\Http\Controllers\problemas\LocacaoController@reserva'])->where('id', '[0-9]+');
-    Route::post('two/locacao/reserva/adicionar',['as' => 'problemas.two.locacao.reservar.adicionar', 'uses' => 'App\Http\Controllers\problemas\LocacaoController@adicionar']);
-    Route::get('two/locacao/reserva/baixar/{id}',['as' => 'problemas.two.locacao.reservar.baixar', 'uses' => 'App\Http\Controllers\problemas\LocacaoController@baixarReserva'])->where('id', '[0-9]+');;
-    
+    Route::post('two/locacao/reserva/adicionar', ['as' => 'problemas.two.locacao.reservar.adicionar', 'uses' => 'App\Http\Controllers\problemas\LocacaoController@adicionar']);
+    Route::get('two/locacao/reserva/baixar/{id}', ['as' => 'problemas.two.locacao.reservar.baixar', 'uses' => 'App\Http\Controllers\problemas\LocacaoController@baixarReserva'])->where('id', '[0-9]+');;
+    Route::get('two/locacao/emaberto/', ['as' => 'problemas.two.locacao.emaberto', 'uses' => 'App\Http\Controllers\problemas\LocacaoController@locacoesEmAberto']);
 });
